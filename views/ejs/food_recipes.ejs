@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piggy Piggy</title>
+    <link rel="stylesheet" href="/css/index.css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div id="mainPart" class="container-fluid">
+    <% include partial/top_bar.ejs%>
+
+    <div class="row">
+        <div class="col-12 pic-display-wrapper">
+            <ul>
+                <li class="single-display-recipe-container">
+                    <p class="top-three-style">TOP 2</p>
+                    <div class="left-pic-style" >
+                        <a href="/main/foodrecipe/info?id=<%= id_top2%>"><img class="recipe-display-size" src=<%= path_two%> ></a>
+                    </div>
+                    <div class="recipe-desc-container">
+                        <form method="post" action="/topthumbup" id="form2">
+                            <input id="id_top2" name="id_top2" type="hidden" value="<%= id_top2%>">
+                            <a class="recipe-name-style my-a-style like-text"><%= name_two%></a>
+                            <p>
+                                <a class="recipe-rating-style my-a-style like-text">HEALTHY</a>
+                                <img id="h2" class="like-size <%= h_active2%>" src="<%= h_path2%>" >:
+                                <a id="h2_n" class="number-style"><%= healthy_no_two%></a>
+                            </p>
+                            <p>
+                                <a class="recipe-rating-style my-a-style like-text">DELICIOUS</a>
+                                <img id="d2" class="like-size <%= d_active2%>" src="<%= d_path2%>" >:
+                                <a id="d2_n" class="number-style"><%= delicious_no_two%></a>
+                            </p>
+                        </form>
+                    </div>
+                </li>
+                <li class="single-display-recipe-container">
+                    <p class="top-three-style">
+                        <img class="medium-icon-size" style="margin-bottom: 1vh;" src="/images/crown.png">
+                        TOP 1
+                    </p>
+                    <div class="mid-pic-style">
+                        <a href="/main/foodrecipe/info?id=<%= id_top1%>"><img class="recipe-display-size" src=<%=path_one%>></a>
+                    </div>
+                    <div class="recipe-desc-container">
+                        <form method="post" action="/topthumbup" id="form1">
+                            <input id="id_top1" name="id_top1" type="hidden" value="<%= id_top1%>">
+                            <a class="recipe-name-style my-a-style like-text"><%= name_one%></a>
+                            <p>
+                                <a class="recipe-rating-style my-a-style like-text">HEALTHY</a>
+                                <img id="h1" class="like-size <%= h_active1%>" src="<%= h_path1%>" >:
+                                <a id="h1_n" class="number-style"><%= healthy_no_one%></a>
+                            </p>
+                            <p>
+                                <a class="recipe-rating-style my-a-style like-text">DELICIOUS</a>
+                                <img id="d1" class="like-size <%= d_active1%>" src="<%= d_path1%>" >:
+                                <a id="d1_n" class="number-style"><%= delicious_no_one%></a>
+                            </p>
+                        </form>
+
+                    </div>
+                </li>
+                <li class="single-display-recipe-container">
+                    <p class="top-three-style">TOP 3</p>
+                    <div class="right-pic-style">
+                        <a href="/main/foodrecipe/info?id=<%= id_top3%>"><img class="recipe-display-size" src=<%= path_three%>></a>
+                    </div>
+                    <div class="recipe-desc-container">
+                        <form method="post" action="/topthumbup" id="form3">
+                            <input id="id_top3" name="id_top3" type="hidden" value="<%= id_top3%>">
+                            <a class="recipe-name-style my-a-style like-text"><%= name_three%></a>
+                            <p>
+                                <a class="recipe-rating-style my-a-style like-text">HEALTHY</a>
+                                <img id="h3" class="like-size <%= h_active3%>" src="<%= h_path3%>" >:
+                                <a id="h3_n" class="number-style"><%= healthy_no_three%></a>
+                            </p>
+                            <p>
+                                <a class="recipe-rating-style my-a-style like-text">DELICIOUS</a>
+                                <img id="d3" class="like-size <%= d_active3%>" src="<%= d_path3%>" >:
+                                <a id="d3_n" class="number-style"><%= delicious_no_three%></a>
+                            </p>
+                        </form>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="search-wrapper col-12">
+            <form method="get">
+                <input id="title" name="title" type="text" class="search-term" placeholder="What are you looking for?">
+                <button id="search" name="search" value="Searching" type="submit" class="search-button">
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="submit-wrapper col-12">
+            <a id="submitBtn" class="button btn-border btn-blue-green long-width-button my-a-style"
+               href="/main/foodrecipe/submit" >
+                SUBMIT MY OWN RECIPE!
+            </a>
+        </div>
+    </div>
+</div>
+<script>
+
+    let form1 = $('#form1');
+    let form2 = $('#form2');
+    let form3 = $('#form3');
+    let h1 = $('#h1');
+    let h2 = $('#h2');
+    let h3 = $('#h3');
+    let d1 = $('#d1');
+    let d2 = $('#d2');
+    let d3 = $('#d3');
+
+    $(h1.click(function () {
+
+        if (h1.hasClass('like-active')){
+            h1.removeClass('like-active');
+            h1.attr("src","/images/like.png");
+            form1.append("<input type='hidden' name='action' value='h_unlike' />");
+
+        }
+        else {
+            h1.addClass('like-active');
+            h1.attr("src","/images/like_active.png");
+            form1.append("<input type='hidden' name='action' value='h_like' />");
+        }
+        form1.submit();
+    }))
+
+    $(d1.click(function () {
+
+        if (d1.hasClass('like-active')){
+            d1.removeClass('like-active');
+            d1.attr("src","/images/like.png");
+            form1.append("<input type='hidden' name='action' value='d_unlike' />");
+        }
+        else {
+            d1.addClass('like-active');
+            d1.attr("src","/images/like_active.png");
+            form1.append("<input type='hidden' name='action' value='d_like' />");
+        }
+        form1.submit();
+    }))
+
+    $(h2.click(function () {
+
+        if (h2.hasClass('like-active')){
+            h2.removeClass('like-active');
+            h2.attr("src","/images/like.png");
+            form2.append("<input type='hidden' name='action' value='h_unlike' />");
+
+        }
+        else {
+            h2.addClass('like-active');
+            h2.attr("src","/images/like_active.png");
+            form2.append("<input type='hidden' name='action' value='h_like' />");
+        }
+        form2.submit();
+    }))
+
+    $(d2.click(function () {
+
+        if (d2.hasClass('like-active')){
+            d2.removeClass('like-active');
+            d2.attr("src","/images/like.png");
+            form2.append("<input type='hidden' name='action' value='d_unlike' />");
+        }
+        else {
+            d2.addClass('like-active');
+            d2.attr("src","/images/like_active.png");
+            form2.append("<input type='hidden' name='action' value='d_like' />");
+        }
+        form2.submit();
+    }))
+
+    $(h3.click(function () {
+
+        if (h3.hasClass('like-active')){
+            h3.removeClass('like-active');
+            h3.attr("src","/images/like.png");
+            form3.append("<input type='hidden' name='action' value='h_unlike' />");
+
+        }
+        else {
+            h3.addClass('like-active');
+            h3.attr("src","/images/like_active.png");
+            form3.append("<input type='hidden' name='action' value='h_like' />");
+        }
+        form3.submit();
+    }))
+
+    $(d3.click(function () {
+
+        if (d3.hasClass('like-active')){
+            d3.removeClass('like-active');
+            d3.attr("src","/images/like.png");
+            form3.append("<input type='hidden' name='action' value='d_unlike' />");
+        }
+        else {
+            d3.addClass('like-active');
+            d3.attr("src","/images/like_active.png");
+            form3.append("<input type='hidden' name='action' value='d_like' />");
+        }
+        form3.submit();
+    }))
+
+</script>
+<% include partial/squiggly.ejs%>
+
+</body>
+</html>

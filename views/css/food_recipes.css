@@ -1,0 +1,141 @@
+p.top-three-style {
+    font-family: American Typewriter, serif;
+    position: relative;
+    font-size: 2vw;
+    color: darkgoldenrod;
+    margin-bottom: 0;
+    margin-top: 1vh;
+}
+
+a.recipe-name-style {
+    font-size: 1.5vw;
+}
+
+a.recipe-rating-style {
+    font-size: 1.1vw;
+}
+
+.row li {
+    width: 33.3%;
+    float: left;
+}
+
+.search {
+    width: 100%;
+    position: relative
+}
+
+.search-term {
+    float: left;
+    width: 90%;
+    border: 3px solid #265828;
+    background-color: #265828;
+    padding: 5px;
+    height: 2.5vw;
+    border-radius: 6px;
+    outline: none;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.search-term::placeholder{
+    color: white;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.search-term:focus{
+    color: black;
+}
+
+.search-button {
+    position: relative;
+    right: 1vw;
+    width: 10%;
+    height: 2.5vw;
+    border: 3px solid #265828;
+    background: url("/images/search.svg") no-repeat #265828 20%;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline;
+}
+
+.search-wrapper {
+    position: relative;
+    width: 25vw;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.left-pic-style {
+    border: black solid 1px;
+    float: left;
+
+}
+
+.mid-pic-style {
+    border: black solid 1px;
+    margin: auto;
+}
+
+.right-pic-style {
+    border: black solid 1px;
+    float: right;
+}
+
+.recipe-display-size {
+    margin: auto;
+    width: 100%;
+    min-height: 30vh;
+    max-width: 40vw;
+    max-height: 30vh;
+    /*!*cursor:pointer;*!  Link to recipe_info.ejs: TO_DO */
+}
+
+.recipe-desc-container {
+    display: block;
+}
+
+
+.single-display-recipe-container {
+    position: relative;
+    max-width: 22%;
+    display:inline-block;
+    margin-left: 7.5vw;
+}
+
+.pic-display-wrapper {
+    position: relative;
+    text-align:center;
+}
+
+.submit-wrapper {
+    position: relative;
+    margin-left: 36.5vw;
+    margin-top: 4vh;
+}
+
+.btn-blue-green {
+    background: #265828;
+}
+
+.btn-blue-green.btn-border {
+    box-shadow: 0px 0px 0px 0px #4CAF50;
+}
+
+.btn-blue-green.btn-border:hover {
+    box-shadow: 0px 0px 0px 5px #4CAF50;
+}
+
+.long-width-button {
+    padding: 1.2vh 6.5vw;
+}
+
+.results-wrapper {
+    width: 50vw;
+    margin: 5vh auto;
+    height: auto;
+    background: url("/images/background_results.jpg");
+}

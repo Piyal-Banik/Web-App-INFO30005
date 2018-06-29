@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Piggy Piggy</title>
+    <link rel="stylesheet" href="/css/index.css" >
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/squiggly.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src = "/js/login.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <p id="title" class="my-a-style test" style="font-size: 3vw; font-weight: bolder">VISIT US</p>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="login-page col-12">
+            <div class="form">
+                <form class="register-form" action="/signup" method="post">
+                    <input id="username" name="username" type="text" placeholder="name"/>
+                    <input id="password" name="password" type="password" placeholder="password"/>
+                    <input id="email" name="email" type="text" placeholder="email address"/>
+                    <button name="signUp" id="signUp" value="signUp" type="submit">create</button>
+                    <p class="message">Already registered? <a href="#" onclick="login()">Sign In</a></p>
+                </form>
+                <form class="login-form" action="/auth" method="post">
+                    <input id="username" name="username" type="text" placeholder="username"/>
+                    <input id="password" name="password" type="password" placeholder="password"/>
+                    <button id="logIn" name="logIn" value="logIn" type="submit">login</button>
+                    <p class="message">Not registered? <a href="#" onclick="login()">Create an account</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+
+</html>

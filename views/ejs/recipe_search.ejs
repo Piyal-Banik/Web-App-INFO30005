@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piggy Piggy</title>
+    <link rel="stylesheet" href="/css/index.css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <% include partial/top_bar.ejs%>
+
+    <div class="row">
+        <div class="search-wrapper col-12">
+            <form method="get">
+                <input id="title" name="title" type="text" class="search-term" placeholder="What are you looking for?">
+                <button id="search" name="search" value="Searching" type="submit" class="search-button">
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="results-wrapper">
+        <div class="row" style="text-align: center;font-family: American Typewriter, serif;">
+            <h3 style="color: red"><%= notfound%></h3>
+        </div>
+        <div class="row" id="results">
+
+        </div>
+    </div>
+
+</div>
+</body>
+
+<script>
+
+    $(function () {
+        let result_l = <%- JSON.stringify(result_l) %>;
+        let i = 0;
+        if (result_l) {
+            while (result_l[i]) {
+                $('#results').append('<div class="results_wrapper" >' +
+                    '<a class="results_style my-a-style animation-underline after" ' +
+                    'href="/main/foodrecipe/info?id=' + result_l[i][0] + '">' +
+                    result_l[i][1] + '</a></div>');
+                i += 1;
+            }
+        }
+        else {
+            console.log("result_l is empty");
+        }
+    })
+</script>
+</html>

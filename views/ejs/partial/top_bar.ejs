@@ -1,0 +1,71 @@
+<link rel="stylesheet" href="/css/index.css" >
+<link rel="stylesheet" href="/css/main.css" >
+<link rel="stylesheet" href="/css/food_recipes.css" >
+<link rel="stylesheet" href="/css/squiggly.css" >
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<div id="bar" class="row">
+    <ul>
+        <li id="btn1"><a href="/main">Home</a></li>
+        <li id="btn2"><a href="/main/game" >Feed The Piggy</a></li>
+        <li id="btn3"><a href="/main/foodrecipe" >Food Recipe</a></li>
+        <li id="btn4"><a href="/main/foodcalendar" >Food Calendar</a></li>
+        <li id="btn5" style="float:right"><a href="/main/contact" >Contact</a></li>
+    </ul>
+</div>
+
+<div class="row">
+    <div class="col-4" style="display: inline">
+        <img id="ham_icon" class="small-icon-size top-icon-style" src="/images/piggy.png" onclick="displayBtn()">
+    </div>
+    <div class="col-6  top-bar-wrapper" style="display: inline">
+            <span id="list" class="top-bar-style">
+                <a id="signOutBtn" class="my-a-style animation-underline after" href="/" style="display: none">SIGNOUT</a>
+            </span>
+    </div>
+    <div class="col-2" style="display: inline">
+        <span><a class="user-sign my-a-style" >WELCOME, <%= username%></a></span>
+    </div>
+</div>
+<div class="row">
+    <div class="center-block title-wrapper col-12">
+        <p class="middle-title test" style="margin: 1.5vw"><span><%= title%></span></p>
+    </div>
+</div>
+
+
+
+<script>
+    $(function() {
+        let x = $(location).attr('pathname');
+        if (x === "/main/" || x === "/main") {
+            $("#btn1").addClass("active-btn");
+        }
+        else if (x.indexOf("/main/game") !== -1) {
+            $("#btn2").addClass("active-btn");
+        }
+        else if (x.indexOf("/main/foodrecipe") !== -1) {
+            $("#btn3").addClass("active-btn");
+        }
+        else if (x.indexOf("/main/foodcalendar") !== -1) {
+            $("#btn4").addClass("active-btn");
+        }
+        else if (x.indexOf("/main/contact") !== -1) {
+            $("#btn5").addClass("active-btn");
+        }
+
+    });
+    let x = document.getElementById('signOutBtn');
+    function displayBtn() {
+        if(x.style.display === 'inline'){
+            x.style.display = 'none';
+        }
+        else{
+            x.style.display = 'inline';
+        }
+    }
+
+</script>
+

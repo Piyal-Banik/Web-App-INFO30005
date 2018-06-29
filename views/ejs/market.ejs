@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piggy Piggy</title>
+    <script src="/js/farm.js"></script>
+    <link rel="stylesheet" href="/css/index.css" >
+    <link rel="stylesheet" href="/css/market.css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <% include partial/top_bar.ejs%>
+    <audio autoplay loop>
+        <source src="/sound/maple.mp3">
+    </audio>
+    <audio autoplay>
+        <source src="/sound/Hello.mp3">
+    </audio>
+    <div class="row">
+
+        <div class="col-6 image-wrapper parent">
+            <div class="gold-wrapper">
+                <p class = "mygold">Gold: <%= goldqty%></p>
+            </div>
+            <IMG class = "market-img" SRC="/images/market.png">
+            <div class="piggy-with-hat-wrapper" >
+                <IMG class="background-pig" SRC="/images/pig.png">
+
+                <IMG class="pig-hat" SRC="/images/hat.png">
+            </div>
+
+            <div class="items-wrapper">
+                <div class="items-row-wrapper">
+                    <!--hamburger-->
+                    <div id="itemPic1" class="single-item-wrapper" >
+                        <form method="post">
+
+                            <input type="hidden" id="path" name="path" value="<%= imgpath1%>">
+                            <button class="purchase1"name="submit" id="submit" value="Submit"><IMG class="items" SRC="/images/fooditems/<%= imgpath1%>.png"></button>
+
+                            <p class="quantity">Quantity: <%= myqty1%></p>
+                            <p class="price">Price: <%= price1%> </p>
+                            <p class="title"><%= imgpath1%></p>
+
+                        </form>
+                    </div>
+                    <!--banana-->
+                    <div id="itemPic2" class="single-item-wrapper" >
+                        <form method="post">
+
+                            <input type="hidden" id="path" name="path" value="<%= imgpath2%>">
+                            <button class="purchase1"name="submit" id="submit" value="Submit"><IMG class="items" SRC="/images/fooditems/<%= imgpath2%>.png"></button>
+                            <p class="quantity">Quantity: <%= myqty2%></p>
+                            <p class="price">Price: <%= price2%> </p>
+                            <p class="title"><%= imgpath2%></p>
+                        </form>
+                    </div>
+                    <!--apple-->
+                    <div id="itemPic3" class="single-item-wrapper" >
+                        <form method="post">
+                                <input type="hidden" id="path" name="path" value="<%= imgpath3%>">
+                                <button class="purchase1"name="submit" id="submit" value="Submit"><IMG class="items" SRC="/images/fooditems/<%= imgpath3%>.png"></button>
+                                <p class="quantity">Quantity: <%= myqty3%></p>
+                                <p class="price">Price: <%= price3%> </p>
+                            <p class="title"><%= imgpath3%></p>
+                        </form>
+                    </div>
+                    <!--grapes-->
+                    <div id="itemPic4" class="single-item-wrapper" >
+                        <form method="post">
+                                <input type="hidden" id="path" name="path" value="<%= imgpath4%>">
+                                <button class="purchase1"name="submit" id="submit" value="Submit"><IMG class="items" SRC="/images/fooditems/<%= imgpath4%>.png"></button>
+                                <p class="quantity">Quantity: <%= myqty4%></p>
+                                <p class="price">Price: <%= price4%> </p>
+                            <p class="title"><%= imgpath4%></p>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="items-row-wrapper">
+                    <!--mushroom-->
+                    <div id="itemPic4" class="single-item-wrapper" >
+                        <form method="post">
+                                <input type="hidden" id="path" name="path" value="<%= imgpath5%>">
+                                <button class="purchase1"name="submit" id="submit" value="Submit"><IMG class="items" SRC="/images/fooditems/<%= imgpath5%>.png"></button>
+                                <p class="quantity">Quantity: <%= myqty5%></p>
+                                <p class="price">Price: <%= price5%> </p>
+                            <p class="title"><%= imgpath5%></p>
+                        </form>
+                    </div>
+                    <!--pear-->
+                    <div id="itemPic4" class="single-item-wrapper" >
+                        <form method="post">
+                                <input type="hidden" id="path" name="path" value="<%= imgpath6%>">
+                                <button class="purchase1"name="submit" id="submit" value="Submit"><IMG class="items" SRC="/images/fooditems/<%= imgpath6%>.png"></button>
+                                <p class="quantity">Quantity: <%= myqty6%></p>
+                                <p class="price">Price: <%= price6%> </p>
+                            <p class="title"><%= imgpath6%></p>
+                        </form>
+                    </div>
+                    <!--fries-->
+                    <div id="itemPic4" class="single-item-wrapper" >
+                        <form method="post">
+                                <input type="hidden" id="path" name="path" value="<%= imgpath7%>">
+                                <button class="purchase1"name="submit" id="submit" value="Submit"><IMG class="items" SRC="/images/fooditems/<%= imgpath7%>.png"></button>
+                                <p class="quantity">Quantity: <%= myqty7%></p>
+                                <p class="price">Price: <%= price7%> </p>
+                            <p class="title"><%= imgpath7%></p>
+                        </form>
+                    </div>
+                    <!--nuggets-->
+                    <div id="itemPic4" class="single-item-wrapper" >
+                        <form method="post">
+                                <input type="hidden" id="path" name="path" value="<%= imgpath8%>">
+                                <button class="purchase1"name="submit" id="submit" value="Submit"><IMG class="items" SRC="/images/fooditems/<%= imgpath8%>.png"></button>
+                                <p class="quantity">Quantity: <%= myqty8%></p>
+                                <p class="price">Price: <%= price8%> </p>
+                            <p class="title"><%= imgpath8%></p>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="items-row-wrapper">
+                    <!--blueberry-->
+                    <div id="itemPic4" class="single-item-wrapper" >
+                        <form method="post">
+                                <input type="hidden" id="path" name="path" value="<%= imgpath9%>">
+                                <button class="purchase1"name="submit" id="submit" value="Submit"><IMG class="items" SRC="/images/fooditems/<%= imgpath9%>.png"></button>
+                                <p class="quantity">Quantity: <%= myqty9%></p>
+                                <p class="price">Price: <%= price9%> </p>
+                            <p class="title"><%= imgpath9%></p>
+
+                        </form>
+                    </div>
+                    <!--cola-->
+                    <div id="itemPic4" class="single-item-wrapper" >
+                        <form method="post">
+                                <input type="hidden" id="path" name="path" value="<%= imgpath10%>">
+                                <button class="purchase1"name="submit" id="submit" value="Submit"><IMG class="items" SRC="/images/fooditems/<%= imgpath10%>.png"></button>
+                                <p class="quantity">Quantity: <%= myqty10%></p>
+                                <p class="price">Price: <%= price10%></p>
+                            <p class="title"><%= imgpath10%></p>
+                        </form>
+                    </div>
+                    <!--watermelon-->
+                    <div id="itemPic4" class="single-item-wrapper" >
+                        <form method="post">
+                                <input type="hidden" id="path" name="path" value="<%= imgpath11%>">
+                                <button class="purchase1"name="submit" id="submit" value="Submit"><IMG class="items" SRC="/images/fooditems/<%= imgpath11%>.png"></button>
+                                <p class="quantity">Quantity: <%= myqty11%></p>
+                                <p class="price">Price: <%= price11%></p>
+                            <p class="title"><%= imgpath11%></p>
+                        </form>
+                    </div>
+                    <!--orange-->
+                    <div id="itemPic4" class="single-item-wrapper" >
+                        <form method="post">
+                                <input type="hidden" id="path" name="path" value="<%= imgpath12%>">
+                                <button class="purchase1"name="submit" id="submit" value="Submit"><IMG class="items" SRC="/images/fooditems/<%= imgpath12%>.png"></button>
+                                <p class="quantity">Quantity: <%= myqty12%></p>
+                                <p class="price">Price: <%= price12%></p>
+                            <p class="title"><%= imgpath12%></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>

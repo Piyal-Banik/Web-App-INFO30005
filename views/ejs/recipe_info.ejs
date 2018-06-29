@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piggy Piggy</title>
+    <link rel="stylesheet" href="/css/index.css" >
+    <link rel="stylesheet" href="/css/recipe_info.css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container-fluid">
+    <% include partial/top_bar.ejs%>
+    <div class="row">
+        <div class="col-6 info-wrapper">
+            <div id="ingredients" class="ingredient-wrapper">
+                <h1>INGREDIENT</h1>
+                <% for(var i = 0 ; i < ingredients.length ; i++) { %>
+                <p class="recipe-content-style"><b>INGREDIENT <%=i+1%>:</b> <%= ingredients[i] %></p>
+                <% } %>
+            </div>
+            <div id="steps" class="steps-wrapper">
+                <h1>PROCEDURES</h1>
+                <% for(var j = 0 ; j < steps.length ; j++) { %>
+                    <h4>STEP <%=j+1%></h4>
+                    <p class="recipe-content-style"><%= steps[j] %></p>
+                <% } %>
+            </div>
+
+        </div>
+
+        <div id="creator" class="creator-wrapper">
+            <p class="recipe-content-style" style="font-size: 2vw">CREATER: <%= creator%></p>
+
+        </div>
+        <div class="col-6 img-wrapper">
+            <img class="display-img" src="<%= imagePath%>" alt="The creator did not upload any photos">
+            <div class="thumb-up-wrapper">
+                <form method="post" action="/infothumbup" id="likeForm">
+                    <input type="hidden" name="r_id" value="<%= r_id%>">
+                    <p>
+                        <a class="recipe-rating-style my-a-style like-text">HEALTHY</a>
+                        <img id="h1" class="like-size <%= h_active_class%>" src="<%= h_path%>" >:
+                        <a id="h1_n" class="number-style"><%= h_likes%></a>
+                    </p>
+
+                    <p>
+                        <a class="recipe-rating-style my-a-style like-text">DELICIOUS</a>
+                        <img id="d1" class="like-size <%= d_active_class%>" src="<%= d_path%>" >:
+                        <a id="d1_n" class="number-style"><%= d_likes%></a>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+
+<script>
+
+    let h1 = $('#h1');
+    let d1 = $('#d1');
+    let form = $('#likeForm');
+    $(h1.click(function () {
+
+        if (h1.hasClass('like-active')){
+            h1.removeClass('like-active');
+            h1.attr("src","/images/like.png");
+            form.append("<input type='hidden' name='action' value='h_unlike' />");
+
+        }
+        else {
+            h1.addClass('like-active');
+            h1.attr("src","/images/like_active.png");
+            form.append("<input type='hidden' name='action' value='h_like' />");
+        }
+        form.submit();
+    }))
+
+    $(d1.click(function () {
+
+        if (d1.hasClass('like-active')){
+            d1.removeClass('like-active');
+            d1.attr("src","/images/like.png");
+            form.append("<input type='hidden' name='action' value='d_unlike' />");
+        }
+        else {
+            d1.addClass('like-active');
+            d1.attr("src","/images/like_active.png");
+            form.append("<input type='hidden' name='action' value='d_like' />");
+        }
+        form.submit();
+    }))
+</script>
+</html>

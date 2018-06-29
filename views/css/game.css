@@ -1,0 +1,295 @@
+progress {
+    display: inline-block;
+    width: 12vw;
+    margin: 0 0;
+    padding: 1px;
+    color: #EDE89A;
+}
+
+.progressbar-text {
+    display: inline-block;
+    position: relative;
+    float: left;
+    margin-left: 2vw;
+    font-weight: 700;
+    font-size: 2vmin;
+}
+
+.progressbar-wrapper {
+    margin-top: 1vw;
+    position: relative;
+    width: 20vw;
+
+}
+
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+.flex-container > * {
+    padding: 15px;
+    -webkit-flex: 1 100%;
+    flex: 1 100%;
+}
+
+#image1, #image2, #image3 {
+    cursor: pointer;
+}
+
+.article {
+    text-align: left;
+}
+
+.nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+.nav ul a {
+    text-decoration: none;
+}
+
+@media all and (min-width: 768px) {
+    .nav {text-align:left;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}
+    .article {-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;}
+}
+
+.parent {
+    position: relative;
+}
+
+.farm-text{
+    float: left;
+    font-size:3vw;
+    color:black;
+    font-weight: 600;
+}
+
+.farm-img{
+    position: relative;
+    width: 100%;
+    height:auto;
+}
+
+.inventory-text{
+    font-size:2vw;
+    color:black;
+}
+
+.inventory-img{
+    position: relative;
+    width: 100%;
+    height:auto;
+}
+
+.pig-wrapper {
+    float: left;
+    position:relative;
+    left: 10vw;
+    width: 20vw;
+}
+
+.pig-img{
+    width: 100%;
+    max-width: 20vw;
+    height: auto;
+}
+
+.pig-attr-wrapper {
+    display: block;
+    position: relative;
+    height: 5vw;
+    text-align: center;
+}
+
+.pig-happy{
+    position: relative;
+    font-size:2.7vmin;
+    color:red;
+}
+
+.pig-ill{
+    position: relative;
+    font-size:2.7vmin;
+    color:dodgerblue;
+}
+
+.pig-fat{
+    position: relative;
+    font-size:2.7vmin;
+    color:darkorange;
+}
+
+.attr-img {
+    width: 18vw;
+    height: 6vw;
+}
+
+.attr-value-wrapper {
+    position: relative;
+    width: 15vw;
+    height: 3vw;
+    bottom: 3vw;
+    left: 5vw;
+}
+
+.farm-item{
+    width: 100%;
+    max-width:2.6vw;
+    height:auto;
+}
+
+.farm-item-wrapper {
+    float: left;
+    position: relative;
+    display: inline-block;
+    width: 3.6vw;
+    height: 4vw;
+}
+
+.farmNum{
+    float: left;
+    position: relative;
+    left: 0.5vw;
+    bottom: 1vw;
+    font-size: 2vmin;
+    font-weight: 500;
+    color: black;
+}
+
+.padding-0{
+    padding-right:0;
+    padding-left:0;
+}
+
+.row.no-gutter {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.market-button {
+    display: block;
+    font-size: 2vw;
+    text-align: center;
+    line-height: 3vw;
+    text-decoration: none;
+    background-color: #8f2f22;
+    border-radius: 4vw;
+    width: 15vw;
+    height: auto;
+    text-shadow: 0 -1px -1px #8f2f22;
+    -moz-box-shadow: 0 4px 0 #8f2f22, 0 5px 5px 1px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 4px 0 #8f2f22, 0 5px 5px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 0 #8f2f22, 0 5px 5px 1px rgba(0, 0, 0, 0.4);
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+}
+
+.market-button a{
+    color: white;
+}
+
+.market-button a:hover{
+    color: yellow;
+    text-decoration: none;
+}
+
+.market-button:hover {
+    background-color: #d25544;
+    text-shadow: 0 -1px -1px #c4402f;
+    -moz-box-shadow: 0 4px 0 #c4402f, 0 5px 5px 1px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 4px 0 #c4402f, 0 5px 5px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 0 #c4402f, 0 5px 5px 1px rgba(0, 0, 0, 0.4);
+}
+.market-button:active {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.inventoryWrapper{
+    float: left;
+    display: inline-block;
+    position: relative;
+    width: 5.45vw;
+    height: 5.1vw;
+}
+
+.inventory-row-wrapper {
+    position: relative;
+    bottom: 27.5vw;
+    left: 1vw;
+    height: 5.1vw;
+}
+
+.inventoryNum{
+    float: left;
+    left: 1vw;
+    bottom: 1vw;
+    position: relative;
+    font-size: 2vmin;
+    font-weight: 500;
+    color: black;
+
+}
+
+.inventory-item{
+    width: 100%;
+    max-width:3.5vw;
+    height:auto;
+}
+
+.farm-wrapper {
+    float: left;
+    position: relative;
+    width: 30vw;
+    left: 5vw;
+}
+
+.farm-row-wrapper{
+    position: relative;
+    bottom: 28.5vw;
+    left: 1.7vw;
+    height: 4vw;
+    width: 27vw;
+
+}
+
+.inventory-wrapper {
+    float: left;
+    position: relative;
+    width: 30vw;
+    left: 10vw;
+}
+
+.market-btn-wrapper {
+    width: 50vw;
+    position: relative;
+    left: 30vw;
+    top: -30vh;
+}
+
+.btn-wrapper {
+    display: inline-block;
+    margin: 0 1vw;
+}
+
+.attr-title-wrapper {
+    position: relative;
+    margin-right: 10vw;
+}
+.gold-wrapper {
+    position: absolute;
+    float: right;
+    right: 8vw;
+    top: 35vw;
+}
+.mygold{
+    font-size: 2.5vw;
+    letter-spacing: 2px;
+    color: darkgoldenrod;
+    font-weight: 600;
+}

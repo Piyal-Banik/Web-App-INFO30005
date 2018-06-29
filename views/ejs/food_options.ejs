@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta charset="UTF-8">
+    <title>Piggy Piggy</title>
+    <link rel="stylesheet" href="/css/index.css" >
+    <link rel="stylesheet" href="/css/Calendar.css" >
+    <link rel="stylesheet" href="/css/food_options.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src = '/js/calendar.js'></script>
+</head>
+<body>
+<div class="container-fluid" >
+
+    <% include partial/top_bar.ejs%>
+    <div class="container">
+        <form method="post" id="mealForm">
+            <p class="meal-title">WHAT HAVE YOU EATEN?</p>
+            <input class="input-wrapper" type="text" id = "breakfast" name = "breakfast" placeholder="BREAKFAST" />
+            <input class="input-wrapper" type="text" id = "lunch" name = "lunch" placeholder="LUNCH"/>
+            <input class="input-wrapper" type="text" id = "dinner" name = "dinner" placeholder="DINNER"/>
+            <input class="input-wrapper" type="text" id = "comment" name="comment" placeholder="COMMENTS"/>
+            <button type="submit" id="submit" name="submit" value="Submit">Keep Record!</button>
+        </form>
+    </div>
+</div>
+
+</body>
+
+<script>
+
+</script>
+</html>

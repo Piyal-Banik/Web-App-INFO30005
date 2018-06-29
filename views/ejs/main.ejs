@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piggy Piggy</title>
+    <link rel="stylesheet" href="/css/index.css" >
+    <link rel="stylesheet" href="/css/main.css" >
+    <link rel="stylesheet" href="/css/squiggly.css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+<div class="container-fluid">
+    <% include partial/top_bar.ejs%>
+
+    <div id="content" class="row">
+        <div class="content-wrapper" id="allContent">
+            <p class="des-content" id="content">
+                <%= text%>
+            </p>
+
+        </div>
+    </div>
+
+</div>
+    <% include partial/squiggly.ejs%>
+</body>
+<script>
+    let texts = [
+        "How can we raise kids' awareness of the benefits of fresh food so they can make better choices?",
+        "Food Recipe is a collection of healthy food recipes and users can rate for each other's work. +" +
+        "Parents can find useful recipes to cook for their children instead of taking them out for fast food " +
+        "or cook unhealthy food.",
+        "Food Calendar is a function designed for helping users to manage and organise their daily meals. " +
+        "The users could put in what kind of food they want to have for breakfast, lunch and dinner " +
+        "everyday. With the help of the our database, it would generate a set of basic information " +
+        "about how much fat, calorie and sugar the users have for the past week and provide suggestions " +
+        "fo cultivating  a healthier diet. ",
+        "The game is the main function of the website. The game is called Piggy Farm. The users could choose" +
+        " various avatars to start (e.g. piggy, kitty, doggy and so on). The users have a expandable farming" +
+        " area. They could cultivate various kinds of food, for example, fresh vegetables and a packet of chips." +
+        " They could purchase foods that are selling by the other users from the market. They would use the food" +
+        " to feed their pet. The food has various properties, namely, happiness, illness, hungriness and healthiness." +
+        " Different food has different level of these properties and the health situation of their pet will follow" +
+        " these properties as well based on what kind of food has been served to the pet.",
+        "Please Contact: junhany@student.unimelb.edu.au"
+    ];
+
+</script>
+
+</html>

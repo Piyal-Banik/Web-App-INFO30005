@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piggy Piggy</title>
+    <link rel="stylesheet" href="/css/squiggly.css" >
+    <link rel="stylesheet" href="/css/index.css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body style="background: white">
+<div id="index" class="container-fluid">
+    <div id="top-bar" class="row" >
+        <div class="col-4" style="display: inline">
+            <img id="ham_icon" class="small-icon-size top-icon-style" src="/images/piggy.png" onclick="displayBtn()">
+        </div>
+        <div class="col-8 top-bar-wrapper" style="display: inline">
+            <span id="btnList" class="top-bar-style" style="display: none">
+                <a class="my-a-style animation-underline after" href="/login">VISIT US</a>
+            </span>
+        </div>
+    </div>
+    <div class="slideShow">
+        <div class="slide3">
+        </div>
+
+        <div class="slide2">
+        </div>
+
+        <div class="slide1">
+        </div>
+        <div class="banner">
+            PIGGY PIGGY
+        </div>
+    </div>
+</div>
+
+
+<script>
+    let x = document.getElementById('btnList');
+    function displayBtn() {
+        if(x.style.display === 'inline'){
+            x.style.display = 'none';
+        }
+        else{
+            x.style.display = 'inline';
+        }
+    }
+
+</script>
+
+</body>
+
+</html>

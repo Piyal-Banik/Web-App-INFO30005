@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <meta charset="UTF-8">
+    <title>Piggy Piggy</title>
+    <link rel="stylesheet" href="/css/index.css" >
+    <link rel="stylesheet" href="/css/Calendar.css" >
+    <link rel="stylesheet" href="/css/index.css" >
+    <link rel="stylesheet" href="/css/food_recipes.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src = '/js/calendar.js'></script>
+</head>
+<body>
+<div class="container-fluid" >
+
+    <% include partial/top_bar.ejs%>
+
+    <div class="row">
+        <div class="calendar-wrapper">
+            <div id="calendar">
+
+                <div id="calendar_header"><i class="icon-chevron-left" style="cursor: pointer">&#10094</i>
+                    <h1></h1>
+                    <i class="icon-chevron-right" style="cursor: pointer">&#10095;</i>
+                </div>
+                <div id="calendar_weekdays"></div>
+                <div id="calendar_content"></div>
+
+            </div>
+        </div>
+        <div class="records-display-wrapper">
+            <p class="records-style"> Record History</p>
+            <div style="margin-top: 3vh">
+                <% for(var i = 0 ; i < records.length ; i++) { %>
+                <p><a class="records-content-style" href="/main/foodcalendar/foodoptions?date=<%= records[i].date %>"><b>RECORD <%=i+1%>:</b> <%= records[i].date %><a></p>
+                <% } %>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<% include partial/squiggly.ejs%>
+
+</body>
+</html>

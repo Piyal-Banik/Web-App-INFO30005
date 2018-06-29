@@ -1,0 +1,84 @@
+.container {
+    position: relative;
+    width: 80%;
+    max-width: 450px;
+    padding-left:50vw;
+    margin: 0 auto;
+}
+
+#date{
+    font-weight: bold;
+}
+
+form {
+    position: relative;
+    width: 100%;
+    margin: 20px auto;
+    padding: 60px;
+    background: url("/images/background_results.jpg");
+    text-align: center;
+}
+
+input {
+    display: inline-block;
+    top: 10vh;
+    width: 100%;
+    margin: 0 0;
+    padding: 10px;
+    border: 2px dashed lightblue;
+    outline: none;
+    font-size: 1.5vw;
+    font-family: 'Economica', 'Arial', sans-serif;
+    font-weight: 400;
+    transition: all 0.2s ease;
+}
+
+input:hover {border-color: deepskyblue}
+
+input:focus {
+    border-color: deepskyblue;
+}
+input::placeholder {
+    color: darkgray;
+}
+
+input#comment {
+    height: 15vh;
+}
+input[type="text"][disabled] {
+    background-color: white;
+}
+
+.input-wrapper {
+    margin-top: 3vh;
+}
+
+button {
+    position: absolute;
+    left: calc(50% - 150px / 2);
+    bottom: calc(-50px / 2);
+    width: 150px;
+    height: 50px;
+    padding: 10px 15px;
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    font-family: 'Economica', 'Arial', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    background: #63a2cb;
+    transition: all 0.2s ease;
+}
+
+button:hover { background: #00B4CC; }
+
+button.valid,
+button.valid:hover { background: mediumseagreen; }
+
+.meal-title {
+    font-size: 2.2vw;
+    font-weight: 700;
+    margin-bottom: 2vh;
+}

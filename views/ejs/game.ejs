@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Piggy Piggy</title>
+    <link rel="stylesheet" href="/css/index.css" >
+    <link rel="stylesheet" href="/css/game.css" >
+    <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Roboto:400"/>
+    <script src="/js/farm.js"></script>
+    <link rel="stylesheet" href="/css/food_recipes.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="flex-container">
+
+    <div class="row">
+        <div class="exit-wrapper">
+            <a class="exit-style my-a-style animation-underline after" href="/main/">EXIT</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="farm-wrapper col-5">
+            <p class="farm-text" style="">Farm</p>
+            <IMG class = "farm-img" SRC="/images/farm.png">
+            <div class="gold-wrapper">
+                <p class = "mygold">Gold: <%= mygold%></p>
+            </div>
+            <div class="farm-row-wrapper">
+                <!--farm apple-->
+                <div class="farm-item-wrapper" id = "image3" >
+                    <form method="post" action="/main/game/feeding" id="feedForm1">
+                        <!--Here is where you put your items in the farm inside a post form-->
+                        <IMG class="farm-item" id = "image3" onclick="feed()" SRC="/images/fooditems/apple.png">
+                    </form>
+                    <p class="farmNum"><%= farmqty1%></p>
+                </div>
+                <!--farm grapes-->
+                <div class="farm-item-wrapper" id = "image5" >
+                    <form method="post" action="/main/game/feeding" id="feedForm2">
+
+                        <!--Here is where you put your items in the farm inside a post form-->
+                        <IMG class="farm-item" id = "image5" onclick="feed()" SRC="/images/fooditems/grapes.png">
+
+                    </form>
+                    <p class="farmNum"><%= farmqty3%></p>
+                </div>
+                <!--farm banana-->
+                <div class="farm-item-wrapper" id = "image4" >
+                    <form method="post" action="/main/game/feeding" id="feedForm3">
+                        <!--Here is where you put your items in the farm inside a post form-->
+                        <IMG class="farm-item" id = "image4" onclick="feed()" SRC="/images/fooditems/banana.png">
+                    </form>
+                    <p class="farmNum"><%= farmqty2%></p>
+                </div>
+
+                <!--farm mushroom-->
+                <div class="farm-item-wrapper" id = "farm_mashroom" >
+                    <form method="post" action="/main/game/feeding" id="feedForm8">
+                        <!--Here is where you put your items in the farm inside a post form-->
+                        <IMG class="farm-item" id = "farm_mashroom" onclick="feed()" SRC="/images/fooditems/mushroom.png">
+                    </form>
+                    <p class="farmNum"><%= farmqty4%></p>
+                </div>
+
+                <!--farm pear-->
+                <div class="farm-item-wrapper" id = "farm_pear" >
+                    <form method="post" action="/main/game/feeding" id="feedForm9">
+                        <!--Here is where you put your items in the farm inside a post form-->
+                        <IMG class="farm-item" id = "farm_pear" onclick="feed()" SRC="/images/fooditems/pear.png">
+                    </form>
+                    <p class="farmNum"><%= farmqty5%></p>
+                </div>
+                <!--farm blueberry-->
+                <div class="farm-item-wrapper" id = "farm_blueberry" >
+                    <form method="post" action="/main/game/feeding" id="feedForm10">
+                        <!--Here is where you put your items in the farm inside a post form-->
+                        <IMG class="farm-item" id = "farm_blueberry" onclick="feed()" SRC="/images/fooditems/blueberry.png">
+                    </form>
+                    <p class="farmNum"><%= farmqty6%></p>
+                </div>
+                <!--farm watermelon-->
+                <div class="farm-item-wrapper" id = "farm_watermelon" >
+                    <form method="post" action="/main/game/feeding" id="feedForm11">
+                        <!--Here is where you put your items in the farm inside a post form-->
+                        <IMG class="farm-item" id = "farm_watermelon" onclick="feed()" SRC="/images/fooditems/watermelon.png">
+                    </form>
+                    <p class="farmNum"><%= farmqty7%></p>
+                </div>
+
+            </div>
+            <div class="farm-row-wrapper">
+                <!--farm orange-->
+                <div class="farm-item-wrapper" id = "farm_orange" >
+                    <form method="post" action="/main/game/feeding" id="feedForm12">
+                        <!--Here is where you put your items in the farm inside a post form-->
+                        <IMG class="farm-item" id = "farm_orange" onclick="feed()" SRC="/images/fooditems/orange.png">
+                    </form>
+                    <p class="farmNum"><%= farmqty8%></p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="inventory-wrapper col-5">
+            <p class = "farm-text">Inventory</p>
+            <IMG class = "inventory-img" SRC="/images/inventory.png">
+            <div class="inventory-row-wrapper">
+                <!-- inventory banana -->
+                <div id="image1" class="inventoryWrapper" >
+                    <form method="post" action="/main/game/plant" id="plantForm1">
+                        <IMG class="inventory-item" SRC="/images/fooditems/banana.png">
+                    </form>
+                    <p class="inventoryNum"><%= inventoryNum1%></p>
+                </div>
+                <!-- inventory apple -->
+                <div id="image2" class="inventoryWrapper">
+                    <form method="post" action="/main/game/plant" id="plantForm2">
+                        <IMG class="inventory-item" SRC="/images/fooditems/apple.png">
+                    </form>
+                    <p class="inventoryNum"><%= inventoryNum2%></p>
+                </div>
+                <!-- inventory grapes -->
+                <div id="inventorygrapes" class="inventoryWrapper">
+                    <form method="post" action="/main/game/plant" id="plantForm3">
+                        <IMG class="inventory-item" SRC="/images/fooditems/grapes.png">
+                    </form>
+                    <p class="inventoryNum"><%= inventoryNum3%></p>
+                </div>
+                <!-- inventory hamburger -->
+                <div id="hamburger_id" class="inventoryWrapper" onclick="feedHamburger()">
+                    <form method="post" action="/main/game/feeding" id="feedForm4">
+                        <IMG class="inventory-item" SRC="/images/fooditems/hamburger.png">
+                    </form>
+                    <p class="inventoryNum"><%= inventoryNum4%></p>
+                </div>
+                <!-- inventory mushroom -->
+                <div id="inventorymushroom" class="inventoryWrapper">
+                    <form method="post" action="/main/game/plant" id="plantForm4">
+                        <IMG class="inventory-item" SRC="/images/fooditems/mushroom.png">
+                    </form>
+                    <p class="inventoryNum"><%= inventoryNum5%></p>
+                </div>
+            </div>
+            <div class="inventory-row-wrapper">
+                <!-- inventory pear -->
+                <div id="inventorypear" class="inventoryWrapper">
+                    <form method="post" action="/main/game/plant" id="plantForm5">
+                        <IMG class="inventory-item" SRC="/images/fooditems/pear.png">
+                    </form>
+                    <p class="inventoryNum"><%= inventoryNum6%></p>
+                </div>
+
+                <!-- inventory fries -->
+                <div id="inventoryfries" class="inventoryWrapper">
+                    <form method="post" action="/main/game/feeding" id="feedForm5">
+                        <IMG class="inventory-item" onclick="feed()" SRC="/images/fooditems/fries.png">
+                    </form>
+                    <p class="inventoryNum"><%= inventoryNum7%></p>
+                </div>
+                <!-- inventory nuggets -->
+                <div id="inventorynuggets" class="inventoryWrapper">
+                    <form method="post" action="/main/game/feeding" id="feedForm6">
+                        <IMG class="inventory-item" onclick="feed()" SRC="/images/fooditems/nuggets.png">
+                    </form>
+                    <p class="inventoryNum"><%= inventoryNum8%></p>
+                </div>
+
+                <!-- inventory blueberry -->
+                <div id="inventoryblueberry" class="inventoryWrapper">
+                    <form method="post" action="/main/game/plant" id="plantForm6">
+                        <IMG class="inventory-item" SRC="/images/fooditems/blueberry.png">
+                    </form>
+                    <p class="inventoryNum"><%= inventoryNum9%></p>
+                </div>
+
+                <!-- inventory cola -->
+                <div id="inventorycola" class="inventoryWrapper">
+                    <form method="post" action="/main/game/feeding" id="feedForm7">
+                        <IMG class="inventory-item" onclick="feed()" SRC="/images/fooditems/cola.png">
+                    </form>
+                    <p class="inventoryNum"><%= inventoryNum10%></p>
+                </div>
+            </div>
+            <div class="inventory-row-wrapper">
+                <!-- inventory watermelon -->
+                <div id="inventorywatermelon" class="inventoryWrapper">
+                    <form method="post" action="/main/game/plant" id="plantForm7">
+                        <IMG class="inventory-item" SRC="/images/fooditems/watermelon.png">
+                    </form>
+                    <p class="inventoryNum"><%= inventoryNum11%></p>
+                </div>
+
+                <!-- inventory orange -->
+                <div id="inventoryorange" class="inventoryWrapper">
+                    <form method="post" action="/main/game/plant" id="plantForm8">
+                        <IMG class="inventory-item" SRC="/images/fooditems/orange.png">
+                    </form>
+                    <p class="inventoryNum"><%= inventoryNum12%></p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="col-2 padding-0 pig-wrapper">
+            <IMG class = "pig-img" SRC="/images/<%= pig_img%>">
+            <div class="progressbar-wrapper">
+                <p class="progressbar-text">Feeding: </p>
+                <progress value="0" max="10" id="progressBar"></progress>
+            </div>
+            <div class="form-group padding-0 pig-attr-wrapper">
+                <div class="attr-title-wrapper">
+                    <p class ="pig-happy">Happiness: </p>
+                </div>
+                <div class="attr-value-wrapper">
+                    <IMG class = "attr-img" SRC="/images/happiness/happiness-<%= happiness%>.png">
+                </div>
+            </div>
+            <div class="form-group padding-0 pig-attr-wrapper">
+                <div class="attr-title-wrapper">
+                    <p class = "pig-ill">Illness: </p>
+                </div>
+                <div class="attr-value-wrapper">
+                    <IMG class = "attr-img" SRC="/images/illness/illness-<%= illness%>.png">
+                </div>
+            </div>
+            <div class="form-group padding-0 pig-attr-wrapper">
+                <div class="attr-title-wrapper">
+                    <p class ="pig-fat">Fatness: </p>
+                </div>
+                <div class="attr-value-wrapper">
+                    <IMG class = "attr-img" SRC="/images/fatness/fatness-<%= fatness%>.png">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="market-btn-wrapper">
+            <div class="btn-wrapper">
+                <div class="market-button">
+                    <a href="/main/game/market/">MARKET</a>
+                </div>
+            </div>
+            <div class="btn-wrapper">
+                <div class="market-button">
+                    <a href="/main/game/learnmore/">Learn more</a>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="learnmore-btn-wrapper">
+
+        </div>
+
+        <audio autoplay loop>
+            <source src="/sound/maple.mp3">
+        </audio>
+
+        <div class="col-lg-12 parent padding-0">
+
+            <div class="fa fa-plus">
+                <audio id="audio" src="http://www.freesfx.co.uk/rx2/mp3s/2/14423_1460034386.mp3" ></audio>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+
+<script>
+    let apple = $('#image3');
+    let grapes = $('#image5');
+    let banana = $('#image4');
+    let hamburger = $('#hamburger_id');
+    let inven_banana = $('#image1');
+    let inven_apple = $('#image2');
+    let inven_grapes = $('#inventorygrapes');
+    let inven_mushroom = $('#inventorymushroom');
+    let inven_pear = $('#inventorypear');
+    let inven_fries = $('#inventoryfries');
+    let inven_nuggets = $('#inventorynuggets');
+    let inven_blueberry = $('#inventoryblueberry');
+    let inven_cola = $('#inventorycola');
+    let inven_watermelon = $('#inventorywatermelon');
+    let inven_orange = $('#inventoryorange');
+    let farm_mushroom = $('#farm_mashroom');
+    let farm_pear = $('#farm_pear');
+    let farm_blueberry = $('#farm_blueberry');
+    let farm_watermelon = $('#farm_watermelon');
+    let farm_orange = $('#farm_orange');
+
+
+    let feedForm1 = $('#feedForm1');
+    let feedForm2 = $('#feedForm2');
+    let feedForm3 = $('#feedForm3');
+    let feedForm4 = $('#feedForm4');
+    let feedForm5 = $('#feedForm5');
+    let feedForm6 = $('#feedForm6');
+    let feedForm7 = $('#feedForm7');
+    let feedForm8 = $('#feedForm8');
+    let feedForm9 = $('#feedForm9');
+    let feedForm10 = $('#feedForm10');
+    let feedForm11 = $('#feedForm11');
+    let feedForm12 = $('#feedForm12');
+
+
+    let plantForm1 = $('#plantForm1');
+    let plantForm2 = $('#plantForm2');
+    let plantForm3 = $('#plantForm3');
+    let plantForm4 = $('#plantForm4');
+    let plantForm5 = $('#plantForm5');
+    let plantForm6 = $('#plantForm6');
+    let plantForm7 = $('#plantForm7');
+    let plantForm8 = $('#plantForm8');
+
+
+
+
+    $(apple.click(function () {
+        let timeleft = 10;
+        let downloadTimer = setInterval(function(){
+            document.getElementById("progressBar").value = 10 - --timeleft;
+            if(timeleft <= 0) {
+                feedForm1.append("<input type='hidden' name='item' value='<%= farm1%>' />");
+                feedForm1.submit();
+                clearInterval(downloadTimer);
+            }
+        },1000);
+
+    }))
+    $(grapes.click(function () {
+        let timeleft = 10;
+        let downloadTimer = setInterval(function(){
+            document.getElementById("progressBar").value = 10 - --timeleft;
+            if(timeleft <= 0) {
+                feedForm2.append("<input type='hidden' name='item' value='<%= farm3%>' />");
+                feedForm2.submit();
+                clearInterval(downloadTimer);
+            }
+        },1000);
+    }))
+    $(banana.click(function () {
+        let timeleft = 10;
+        let downloadTimer = setInterval(function(){
+            document.getElementById("progressBar").value = 10 - --timeleft;
+            if(timeleft <= 0) {
+                feedForm3.append("<input type='hidden' name='item' value='<%= farm2%>' />");
+                feedForm3.submit();
+                clearInterval(downloadTimer);
+            }
+        },1000);
+    }))
+    $(hamburger.click(function () {
+        let timeleft = 10;
+        let downloadTimer = setInterval(function(){
+            document.getElementById("progressBar").value = 20 - --timeleft;
+            if(timeleft <= 10) {
+                feedForm4.append("<input type='hidden' name='item' value='<%= inventory4%>' />");
+                feedForm4.submit();
+                clearInterval(downloadTimer);
+            }
+        },1000);
+    }))
+
+    $(inven_fries.click(function () {
+        let timeleft = 10;
+        let downloadTimer = setInterval(function(){
+            document.getElementById("progressBar").value = 20 - --timeleft;
+            if(timeleft <= 10) {
+                feedForm5.append("<input type='hidden' name='item' value='<%= inventory7%>' />");
+                feedForm5.submit();
+                clearInterval(downloadTimer);
+            }
+        },1000);
+    }))
+    $(inven_nuggets.click(function () {
+        let timeleft = 10;
+        let downloadTimer = setInterval(function(){
+            document.getElementById("progressBar").value = 20 - --timeleft;
+            if(timeleft <= 10) {
+                feedForm6.append("<input type='hidden' name='item' value='<%= inventory8%>' />");
+                feedForm6.submit();
+                clearInterval(downloadTimer);
+            }
+        },1000);
+    }))
+    $(inven_cola.click(function () {
+        let timeleft = 10;
+        let downloadTimer = setInterval(function(){
+            document.getElementById("progressBar").value = 20 - --timeleft;
+            if(timeleft <= 10) {
+                feedForm7.append("<input type='hidden' name='item' value='<%= inventory10%>' />");
+                feedForm7.submit();
+                clearInterval(downloadTimer);
+            }
+        },1000);
+    }))
+
+    $(farm_mushroom.click(function () {
+        let timeleft = 10;
+        let downloadTimer = setInterval(function(){
+            document.getElementById("progressBar").value = 10 - --timeleft;
+            if(timeleft <= 0) {
+                feedForm8.append("<input type='hidden' name='item' value='<%= farm4%>' />");
+                feedForm8.submit();
+                clearInterval(downloadTimer);
+            }
+        },1000);
+
+    }))
+
+    $(farm_pear.click(function () {
+        let timeleft = 10;
+        let downloadTimer = setInterval(function(){
+            document.getElementById("progressBar").value = 10 - --timeleft;
+            if(timeleft <= 0) {
+                feedForm9.append("<input type='hidden' name='item' value='<%= farm5%>' />");
+                feedForm9.submit();
+                clearInterval(downloadTimer);
+            }
+        },1000);
+    }))
+
+    $(farm_blueberry.click(function () {
+        let timeleft = 10;
+        let downloadTimer = setInterval(function(){
+            document.getElementById("progressBar").value = 10 - --timeleft;
+            if(timeleft <= 0) {
+                feedForm10.append("<input type='hidden' name='item' value='<%= farm6%>' />");
+                feedForm10.submit();
+                clearInterval(downloadTimer);
+            }
+        },1000);
+
+    }))
+
+    $(farm_watermelon.click(function () {
+        let timeleft = 10;
+        let downloadTimer = setInterval(function(){
+            document.getElementById("progressBar").value = 10 - --timeleft;
+            if(timeleft <= 0) {
+                feedForm11.append("<input type='hidden' name='item' value='<%= farm7%>' />");
+                feedForm11.submit();
+                clearInterval(downloadTimer);
+            }
+        },1000);
+
+    }))
+
+    $(farm_orange.click(function () {
+        let timeleft = 10;
+        let downloadTimer = setInterval(function(){
+            document.getElementById("progressBar").value = 10 - --timeleft;
+            if(timeleft <= 0) {
+                feedForm12.append("<input type='hidden' name='item' value='<%= farm8%>' />");
+                feedForm12.submit();
+                clearInterval(downloadTimer);
+            }
+        },1000);
+
+    }))
+
+    $(inven_banana.click(function () {
+        plantForm1.append("<input type='hidden' name='inventory' value='<%= inventory1%>' />");
+        plantForm1.submit();
+    }))
+
+    $(inven_apple.click(function () {
+        plantForm2.append("<input type='hidden' name='inventory' value='<%= inventory2%>' />");
+        plantForm2.submit();
+    }))
+
+    $(inven_grapes.click(function () {
+        plantForm3.append("<input type='hidden' name='inventory' value='<%= inventory3%>' />");
+        plantForm3.submit();
+    }))
+    $(inven_mushroom.click(function () {
+        plantForm4.append("<input type='hidden' name='inventory' value='<%= inventory5%>' />");
+        plantForm4.submit();
+    }))
+    $(inven_pear.click(function () {
+        plantForm5.append("<input type='hidden' name='inventory' value='<%= inventory6%>' />");
+        plantForm5.submit();
+    }))
+    $(inven_blueberry.click(function () {
+        plantForm6.append("<input type='hidden' name='inventory' value='<%= inventory9%>' />");
+        plantForm6.submit();
+    }))
+    $(inven_watermelon.click(function () {
+        plantForm7.append("<input type='hidden' name='inventory' value='<%= inventory11%>' />");
+        plantForm7.submit();
+    }))
+    $(inven_orange.click(function () {
+        plantForm8.append("<input type='hidden' name='inventory' value='<%= inventory12%>' />");
+        plantForm8.submit();
+    }))
+
+
+</script>
+</html>

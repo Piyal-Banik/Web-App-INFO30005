@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piggy Piggy</title>
+    <link rel="stylesheet" href="/css/index.css" >
+    <link rel="stylesheet" href="/css/food_options.css" >
+    <link href='https://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container-fluid">
+    <% include partial/top_bar.ejs%>
+    <div class="row">
+        <div class="col-6 info-wrapper">
+            <div class="wrap">
+                <div class="container">
+                    <form id="mealForm">
+                        <div class= "date" id="date">
+                            <p><%= date%></p>
+                        </div>
+                        <input class="input-wrapper" type="text" id = "breakfast" name = "breakfast" value = <%= breakfast%> disabled/>
+                        <input class="input-wrapper" type="text" id = "lunch" name = "lunch" value =<%= lunch%> disabled/>
+                        <input class="input-wrapper" type="text" id = "dinner" name = "dinner" value=<%=dinner%> disabled/>
+                        <input class="input-wrapper" type="text" id = "comment" name="comment" disabled value=<%=comment%>>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>
